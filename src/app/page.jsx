@@ -23,7 +23,7 @@ const Homepage = () => {
            commitment to excellence.
          </p>
          {/* BUTTONS */}
-         <div className=" w-full flex gap-4 justify-start items-center">
+         <div className=" w-full flex gap-4 justify-start items-center pb-4">
            <button className="p-4 ring-1 bg-black ring-black text-white rounded-lg">View My Work</button>
            <button className="p-4 ring-1 ring-black rounded-lg">Contact Me</button>
          </div>
