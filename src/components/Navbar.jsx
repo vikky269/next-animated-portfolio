@@ -42,7 +42,7 @@ const bottomVariants = {
 
 const listVariants = {
   closed:{
-    x: "100vw"
+    x: "100%"
   },
   opened:{
     x: 0,
@@ -142,9 +142,9 @@ const listItemVariants  = {
 
       {/* menu list */}
       {open && <motion.div 
-      // variants={listVariants}
-      // initial="closed"
-      // animate="opened"
+       variants={listVariants}
+        initial="closed"
+        animate="opened"
       className='inset-0 absolute overflow-hidden w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 z-40 text-4xl'>
         {links.map((link)=>(
             <motion.div key={link.title} variants={listItemVariants}>
