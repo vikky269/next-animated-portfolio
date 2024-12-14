@@ -2,10 +2,15 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navlinks from './Navlinks'
 import { motion } from 'framer-motion'
+
+
 const Navbar = () => {
+
+const [open ,setOpen] = useState(false)
+
 
 const topVariants = {
   closed:{
@@ -59,7 +64,8 @@ const listItemVariants  = {
     opacity:1
   }
 }
-const [open ,setOpen] = useState(false)
+
+
 
     const links = [
         {url: "/", title: "Home"},
@@ -136,10 +142,10 @@ const [open ,setOpen] = useState(false)
 
       {/* menu list */}
       {open && <motion.div 
-      variants={listVariants}
-      initial="closed"
-      animate="opened"
-      className='absolute h-screen w-screen top-0 left-0 bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl'>
+      // variants={listVariants}
+      // initial="closed"
+      // animate="opened"
+      className='inset-0 absolute overflow-hidden w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 z-40 text-4xl'>
         {links.map((link)=>(
             <motion.div key={link.title} variants={listItemVariants}>
               <Link href={link.url} onClick={()=>setOpen(!open)}>{link.title}</Link>
@@ -152,3 +158,4 @@ const [open ,setOpen] = useState(false)
 }
 
 export default Navbar
+//absolute h-screen w-screen top-0 left-0
